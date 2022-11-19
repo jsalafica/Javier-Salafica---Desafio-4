@@ -11,9 +11,10 @@ const app = express();
 
 app.use(json());
 app.use(urlencoded({ extended: true }));
-app.use("/images", express.static(path.join(__dirname + "/uploads")));
 
 app.use("/api/productos", productRouter);
+
+app.use("/images", express.static(path.join(__dirname + "/uploads")));
 app.use("/public", express.static(path.join(__dirname + "/html")));
 
 app.listen(8080, (error) => {
